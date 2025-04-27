@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siddartha Reddy's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <h1 id="name-header">Siddartha Reddy</h1>
+        <nav>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="./assets/myresume.pdf" download="Siddartha_Reddy_Resume.pdf" target="_blank">Resume</a>
+        </nav>
+        <button id="theme-toggle">🌓</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Hello, I'm D Sai Siddartha Reddy</h2>
+            <p>Senior Software Engineer</p>
+        </div>
+        <img id="hero-img" src="./assets/Sid.png" alt="Profile Picture" />
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>
+                I am a WILP student pursuing my B.Sc. in Computer Science at BITS Pilani University. A quick learner
+                with strong proficiency in both Mac and Windows environments, I am a passionate tech enthusiast driven
+                by an insatiable curiosity for emerging technologies. My long-term goal is to become an expert in
+                ethical hacking, prompt engineering, and full-stack development, contributing to innovative solutions in
+                cybersecurity and AI-driven applications.
+            </p>
+            <p>
+                I hold certifications in Java and Generative AI, reflecting my commitment to staying at the forefront of
+                industry trends. I am actively expanding my skill set through continuous learning, with plans to pursue
+                certifications in cloud computing, cybersecurity, and advanced AI frameworks.
+            </p>
+            <p>
+                Beyond academics, I thrive on exploring tech gadgets, building side projects, coding, and staying
+                hands-on with the latest advancements in software and hardware. I also have a deep passion for the
+                automotive world—attending car shows, working on automotive engineering projects, and exploring the
+                integration of technology with modern vehicles.
+            </p>
+            <p>
+                Known for my strong analytical skills, dedication to excellence, and a mindset rooted in continuous
+                learning, I am eager to take on challenging projects and make meaningful contributions to the tech
+                community. I believe in blending creativity with technical expertise to drive innovation and solve
+                real-world problems.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">Java</div>
+            <div class="skill">Project Management</div>
+            <div class="skill">Full Stack Java</div>
+            <div class="skill">Python</div>
+            <div class="skill">Snowflake</div>
+            <div class="skill">Airflow</div>
+            <div class="skill">Oracle SQL</div>
+            <div class="skill">MDM Testing</div>
+            <div class="skill">PowerBI</div>
+            <div class="skill">Prompt Engineering</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project">
+                <img src="./assets/asana.png" alt="Asana Managed Services">
+                <p>L1/1.5 Support</p>
+                <p>I was responsible for the timely acknowledgment and efficient management of Snowflake, Power BI, and
+                    Salesforce support tickets, ensuring they were escalated to the appropriate higher-tier teams for
+                    resolution. Additionally, I monitored and responded to PagerDuty incidents and integration alerts
+                    related to Snowflake, ensuring each issue was thoroughly investigated and addressed with urgency.
+                    My role also involved overseeing and troubleshooting Airflow DAGs, proactively addressing any
+                    failures to ensure seamless workflow operations. I actively contributed to meetings focused on
+                    reporting, offering insightful perspectives and ensuring alignment with organizational goals. With a
+                    keen eye for detail, I utilized advanced Excel skills for meticulous data entry, ensuring the
+                    accuracy and integrity of all data records.
+                </p>
+            </div>
+            <div class="project">
+                <img src="./assets/netapp.png" alt="NetApp">
+                <p>Oracle DB Developer</p>
+                <p>As a NetApp IT Shared Services and Cloud Data Warehouse Developer, I was responsible for executing
+                    recon tasks within Airflow, ensuring efficient and seamless operations. I worked extensively with
+                    databases, including Oracle SQL and Snowflake, to manage and optimize data processes.
+                    I utilized Python for automation, developing scripts to streamline tasks and improve overall
+                    efficiency. In addition, I was involved in data entry using Excel, ensuring accuracy and consistency
+                    in all records. I also participated in regular reporting meetings, contributing valuable insights
+                    and ensuring alignment with team objectives.
+                </p>
+            </div>
+            <div class="project">
+                <img src="./assets/campbell.png" alt="Campbell Soup Company">
+                <p>MDM Tester, Power BI and Oracle SQL Support</p>
+                <p>At Campbell Soup Company, I served as an MDM Tester, providing dedicated support for Power BI and
+                    Oracle SQL integrations. My responsibilities included writing and reviewing test cases within the
+                    Azure DevOps organization, ensuring the accuracy and efficiency of testing processes.
+                    I provided ongoing Power BI and Oracle SQL support for various integrations, utilizing advanced
+                    Excel skills to manage test cases and generate detailed reports. Additionally, I leveraged
+                    Generative AI to optimize project results, ensuring enhanced efficiency and accuracy.
+                    One of my key contributions was writing a Python script that facilitated the conversion of Excel
+                    sheets from an Azure DevOps (ADO) template to an ALM template, streamlining workflows and improving
+                    productivity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-details">
+            <a href="mailto:siddusiddartha451@gmail.com" target="_blank"><img src=".\assets\mail.png" alt="Mail"
+                    width="30" height="30"></a>
+            <a href="tel:+91 6309669558"><img src=".\assets\call.png" alt="Call" width="30" height="30"></a>
+            <a href="https://github.com/IM-SIDDU" target="_blank" rel="noopener"><img src=".\assets\github.png"
+                    alt="GitHub" width="35" height="35"></a>
+            <a href="https://www.linkedin.com/in/siddartha-reddy-2b1a22225/" target="_blank" rel="noopener"><img
+                    src=".\assets\linkedin.png" alt="LinkedIn" width="30" height="30"></a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 D Sai Siddartha Reddy. All rights reserved.
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var links = document.querySelectorAll("nav a");
+            links.forEach(link => link.classList.toggle("active"));
+        }
+    </script>
+
+    <!-- Your External Script for Effects -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
