@@ -15,6 +15,7 @@
 
 html {
     font-size: clamp(14px, 2vw, 18px);
+    scroll-behavior: smooth;
 }
 
 .icon {
@@ -35,8 +36,15 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 img {
@@ -47,10 +55,18 @@ img {
 /* HEADER */
 header {
     background: var(--bg-color);
-    padding: 1.5rem 3rem;
     position: relative;
     z-index: 10;
     flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .header-top {
@@ -69,58 +85,65 @@ header h1 {
 header h1 span {
     color: var(--text-color);
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 header h1 span:hover {
     color: var(--accent-color);
     text-shadow: 0 0 5px var(--accent-color);
+    transform: scale(1.1);
 }
 
 nav {
     display: flex;
     align-items: center;
-    position: relative;
     flex-wrap: wrap;
+    width: 100%;
+    padding-top: 0.5rem;
 }
 
 nav a {
     color: var(--text-color);
-    margin-left: 2rem;
+    margin-right: 2rem;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
     color: var(--accent-color);
-}
-
-nav a.icon {
-    color: var(--text-color);
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    margin-left: 1rem;
+    transform: translateY(-2px);
 }
 
 /* HERO SECTION */
 .hero {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 5rem 2rem;
-    gap: 4rem;
     flex-wrap: wrap;
+    width: 100%;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-text {
     max-width: 500px;
+    justify-content: auto;
+    text-align: left;
+    padding: 0 1%;
 }
 
 .hero-text h2 {
+    width: 100%;
     font-size: 2.5rem;
     color: var(--text-color);
     margin-bottom: 1rem;
+    transition: color 0.3s;
 }
 
 .hero-text h2:hover {
@@ -133,24 +156,23 @@ nav a.icon {
 }
 
 .hero img {
-    width: 300px;
+    width: 500px;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 0 20px var(--accent-color);
-    transition: 0.3s;
-    transform: translate(0, 0);
-    will-change: transform;
+    transition: transform 0.3s ease;
 }
 
 .hero img:hover {
-    transform: scale(1.05);
+    transform: scale(0.55);
 }
 
 /* SECTIONS */
 section {
-    padding: 5rem 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
+    padding: 4rem 1rem;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 .section-title {
@@ -159,19 +181,20 @@ section {
     color: var(--accent-color);
     font-weight: 600;
     text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 #about {
-    padding: 60px 20px;
     text-align: center;
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
     font-size: 1.1rem;
     color: var(--about-text-color);
     line-height: 1.8;
+    animation: fadeIn 1.3s ease-in;
 }
 
 .about-content p {
@@ -187,11 +210,12 @@ section {
 
 .skill {
     background: var(--bg-color);
-    padding: 2rem;
+    padding: auto;
     border-radius: 12px;
     text-align: center;
     border: 2px solid var(--accent-color);
-    transition: 0.3s;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 .skill:hover {
@@ -211,8 +235,9 @@ section {
     background: var(--bg-color);
     border-radius: 12px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: transform 0.3s, border 0.3s, background 0.3s, color 0.3s;
     border: 2px solid transparent;
+    animation: fadeInUp 1.2s ease-in-out;
 }
 
 .project:hover {
@@ -225,6 +250,11 @@ section {
 .project img {
     width: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project img:hover {
+    transform: scale(1.03);
 }
 
 .project p {
@@ -238,14 +268,24 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    animation: fadeIn 1.3s ease-in;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 1rem;
     border: 1px solid var(--accent-color);
     border-radius: 5px;
     background: var(--bg-color);
     color: var(--text-color);
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--accent-color);
+    background-color: #fff8e1;
+    outline: none;
 }
 
 button {
@@ -256,6 +296,7 @@ button {
     color: var(--bg-color);
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.3s, color 0.3s;
 }
 
 button:hover {
@@ -271,25 +312,30 @@ button:hover {
     gap: 1rem;
     margin-top: 2rem;
     flex-wrap: wrap;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 .contact-details a {
     color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .contact-details a:hover {
     color: var(--accent-color);
+    transform: scale(1.1);
 }
 
 /* FOOTER */
 footer {
     background: var(--bg-color);
     text-align: center;
-    padding: 2rem 0;
     color: var(--text-color);
+    width: 100%;
+    margin: 0;
+    padding: 2rem 1rem;
+    animation: fadeIn 1.3s ease-in-out;
 }
 
 /* RESPONSIVE */
@@ -299,55 +345,42 @@ footer {
         text-align: center;
         gap: 2rem;
     }
-    .skills-grid, .projects-grid {
+
+    .skills-grid,
+    .projects-grid {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    .header-top {
-        flex-direction: row;
-    }
-    header {
-        padding: 1rem 1.5rem;
-    }
     nav {
-        width: 100%;
         flex-direction: column;
         align-items: flex-start;
     }
-    nav a {
-        display: none;
-        margin: 0.5rem 0;
-        width: 100%;
-        text-align: left;
-        background: var(--bg-color);
-        border-bottom: 1px solid #eee;
-        padding: 0.75rem 0;
-    }
-    nav a.icon {
-        display: block;
-    }
-    nav a.active {
-        display: block;
-    }
-    .skills-grid, .projects-grid {
+
+    .skills-grid,
+    .projects-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+
     section {
         padding: 2rem 1rem;
     }
+
     .about-content {
         font-size: 1rem;
     }
+
     .project img {
         height: auto;
     }
+
     .contact-details {
         flex-direction: column;
         gap: 0.5rem;
     }
+
     .hero-text h2 {
         font-size: 1.5rem;
     }
@@ -355,20 +388,25 @@ footer {
 
 @media (max-width: 480px) {
     header {
-        padding: 0.5rem 0.5rem;
+        padding: 0.5rem;
     }
+
     .hero {
         padding: 1.5rem 0.5rem;
     }
+
     section {
         padding: 1.5rem 0.5rem;
     }
+
     .section-title {
         font-size: 1.2rem;
     }
+
     .hero img {
         max-width: 200px;
     }
+
     form {
         padding: 0 0.5rem;
     }
