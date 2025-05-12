@@ -10,7 +10,11 @@
         html {
             font-size: clamp(14px, 2vw, 18px);
         }
-        body, header, footer, section {
+
+        body,
+        header,
+        footer,
+        section {
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -19,17 +23,20 @@
 
 <body>
     <header>
-        <h1 id="name-header">Siddartha Reddy</h1>
-        <nav>
+        <div class="header-top">
+            <h1 id="name-header">Siddartha Reddy</h1>
+            <button id="theme-toggle">🌓</button>
             <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+        </div>
+        <nav>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-            <a href="./assets/myresume.pdf" download="Siddartha_Reddy_Resume.pdf" target="_blank">Resume</a>
+            <a href="./assets/myresume.pdf" download target="_blank">Resume</a>
         </nav>
-        <button id="theme-toggle">🌓</button>
     </header>
+
 
     <section class="hero">
         <div class="hero-text">
@@ -117,10 +124,13 @@
         </form>
 
         <div class="contact-details">
-            <a href="mailto:siddusiddartha451@gmail.com" target="_blank"><img src="./assets/mail.png" alt="Mail" width="30" height="30"></a>
+            <a href="mailto:siddusiddartha451@gmail.com" target="_blank"><img src="./assets/mail.png" alt="Mail"
+                    width="30" height="30"></a>
             <a href="tel:+91 6309669558"><img src="./assets/call.png" alt="Call" width="30" height="30"></a>
-            <a href="https://github.com/IM-SIDDU" target="_blank" rel="noopener"><img src="./assets/github.png" alt="GitHub" width="35" height="35"></a>
-            <a href="https://www.linkedin.com/in/siddartha-reddy-2b1a22225/" target="_blank" rel="noopener"><img src="./assets/linkedin.png" alt="LinkedIn" width="30" height="30"></a>
+            <a href="https://github.com/IM-SIDDU" target="_blank" rel="noopener"><img src="./assets/github.png"
+                    alt="GitHub" width="35" height="35"></a>
+            <a href="https://www.linkedin.com/in/siddartha-reddy-2b1a22225/" target="_blank" rel="noopener"><img
+                    src="./assets/linkedin.png" alt="LinkedIn" width="30" height="30"></a>
         </div>
     </section>
 
@@ -130,4 +140,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
