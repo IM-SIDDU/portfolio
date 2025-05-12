@@ -17,6 +17,7 @@ function toggleTheme() {
   }
 }
 
+
 // Image parallax effect
 const heroImg = document.getElementById('hero-img');
 
@@ -37,3 +38,8 @@ nameHeader.innerHTML = '';
     span.classList.add('name-letter');
     nameHeader.appendChild(span);
 });
+
+function toggleMenu() {
+    const links = document.querySelectorAll("nav a:not(.icon)");
+    links.forEach(link => link.classList.toggle("active"));
+}

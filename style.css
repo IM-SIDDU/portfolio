@@ -1,16 +1,20 @@
 /* CSS VARIABLES */
 :root {
-    --bg-color: #f5f5dc; /* soft cream */
-    --text-color: #5C4033; /* default dark brown text */
-    --about-text-color: #4a2e21; /* darker brown for About Me section */
-    --accent-color: #5C4033; /* dark brown for accents */
+    --bg-color: #f5f5dc;
+    --text-color: #5C4033;
+    --about-text-color: #4a2e21;
+    --accent-color: #5C4033;
 }
 
 [data-theme="dark"] {
     --bg-color: #000;
     --text-color: #fff;
-    --about-text-color: #ccc; /* light gray for About Me in dark mode */
-    --accent-color: #850000; /* red for dark mode */
+    --about-text-color: #ccc;
+    --accent-color: #850000;
+}
+
+html {
+    font-size: clamp(14px, 2vw, 18px);
 }
 
 /* BASE STYLES */
@@ -26,6 +30,8 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* HEADER */
@@ -35,6 +41,9 @@ header {
     align-items: center;
     padding: 1.5rem 3rem;
     background: var(--bg-color);
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
 }
 
 header h1 {
@@ -53,6 +62,13 @@ header h1 span:hover {
     text-shadow: 0 0 5px var(--accent-color);
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+
 nav a {
     color: var(--text-color);
     margin-left: 2rem;
@@ -67,6 +83,9 @@ nav a:hover {
 
 nav a.icon {
     display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: 1rem;
 }
 
 /* HERO SECTION */
@@ -88,6 +107,7 @@ nav a.icon {
     color: var(--text-color);
     margin-bottom: 1rem;
 }
+
 .hero-text h2:hover {
     color: var(--accent-color);
 }
@@ -107,52 +127,42 @@ nav a.icon {
     transform: translate(0, 0);
     will-change: transform;
 }
+
 .hero img:hover {
     transform: scale(1.05);
 }
 
-/* SECTION BASE */
+/* SECTIONS */
 section {
     padding: 5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
     color: var(--accent-color);
+    font-weight: 600;
     text-align: center;
 }
 
 #about {
     padding: 60px 20px;
     text-align: center;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: swap;
-    font-weight: 600;
-  }
-  
-  .about-content {
+}
+
+.about-content {
     max-width: 800px;
     margin: auto;
     font-size: 1.1rem;
-    color: swap;
+    color: var(--about-text-color);
     line-height: 1.8;
-  }
-  
-  .about-content p {
+}
+
+.about-content p {
     margin-bottom: 20px;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
-  
-
-
+}
 
 /* SKILLS */
 .skills-grid {
@@ -247,6 +257,7 @@ button:hover {
     align-items: center;
     gap: 1rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .contact-details a {
@@ -269,50 +280,94 @@ footer {
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav {
-        width: 100%;
-        text-align: center;
-    }
-
+@media (max-width: 900px) {
     .hero {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
     }
-
     .hero img {
         width: 80%;
         height: auto;
+        max-width: 300px;
     }
-
-    .hero-text h2 {
-        font-size: 4vw;
-    }
-
     .skills-grid, .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
+}
 
-    footer {
-        font-size: 1rem;
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.5rem;
     }
-
+    nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     nav a {
         display: none;
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: left;
+        background: var(--bg-color);
+        border-bottom: 1px solid #eee;
+        padding: 0.75rem 0;
     }
-
+    nav a.icon {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        background: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
     nav a.active {
         display: block;
     }
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    section {
+        padding: 2rem 1rem;
+    }
+    .about-content {
+        font-size: 1rem;
+    }
+    .project img {
+        height: 150px;
+    }
+    .contact-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+}
 
-    .icon {
-        display: block;
-        font-size: 30px;
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem 0.5rem;
+    }
+    .hero {
+        padding: 1.5rem 0.5rem;
+    }
+    section {
+        padding: 1.5rem 0.5rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+    }
+    .hero img {
+        max-width: 200px;
+    }
+    form {
+        padding: 0 0.5rem;
     }
 }
