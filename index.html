@@ -124,10 +124,10 @@
 
     <section id="contact">
         <h2 class="section-title">Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <textarea placeholder="Message" rows="5" required></textarea>
+        <form action="https://formspree.io/f/xrbkplbp" method="POST">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="_replyto" placeholder="Email" required /> 
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
             <button type="submit">Send Message</button>
         </form>
 

@@ -48,7 +48,7 @@ body {
 }
 
 img {
-    max-width: 100%;
+    max-width: auto;
     height: auto;
 }
 
@@ -119,8 +119,9 @@ nav a:hover {
 .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 5rem 2rem;
+    /* justify-content: space-between; /* Original: Spreads items with space between them */
+    justify-content: center; /* Change to center or remove for less space */
+    padding: 3rem 2rem; /* Reduce top/bottom padding if desired */
     flex-wrap: wrap;
     width: 100%;
     animation: fadeInUp 1s ease-in-out;
@@ -132,10 +133,14 @@ nav a:hover {
 }
 
 .hero-text {
-    max-width: 500px;
-    justify-content: auto;
+    /* max-width: 500px; /* Original: Fixed max-width */
+    max-width: 40%; /* Adjust as needed, e.g., 40% of the container width */
+    /* justify-content: auto; /* This property doesn't apply to flex items directly */
     text-align: left;
-    padding: 0 1%;
+    /* padding: 0 1%; /* Original: 1% padding on left/right */
+    padding-right: 2rem; /* Add some padding to the right of the text for separation */
+    /* If you want to directly control the gap between text and image, you can use 'gap' on the parent flex container (.hero) */
+    /* Add 'gap: 2rem;' to the .hero style if you want a consistent gap */
 }
 
 .hero-text h2 {
@@ -156,7 +161,9 @@ nav a:hover {
 }
 
 .hero img {
-    width: 500px;
+    /* width: 500px; /* Original: Fixed width */
+    max-width: 35%;
+    width: 35%; /* Adjust as needed, e.g., 40% of the container width */
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 0 20px var(--accent-color);
@@ -165,6 +172,20 @@ nav a:hover {
 
 .hero img:hover {
     transform: scale(0.55);
+}
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem; /* This gap is already defined for smaller screens */
+    }
+    .hero-text {
+        max-width: 100%; /* For smaller screens, allow text to take full width */
+        padding-right: 0; /* Remove right padding on smaller screens */
+    }
+    .hero img {
+        width: 80%; /* Adjust image width for smaller screens */
+    }
 }
 
 /* SECTIONS */
@@ -206,6 +227,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 2rem;
+
 }
 
 .skill {
